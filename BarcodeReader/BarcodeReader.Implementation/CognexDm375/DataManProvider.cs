@@ -1,4 +1,5 @@
-﻿using BarcodeReader.Core;
+﻿using System;
+using BarcodeReader.Core;
 using Cognex.DataMan.SDK;
 using Cognex.DataMan.SDK.Utils;
 using Microsoft.Toolkit.Mvvm.Messaging;
@@ -8,6 +9,7 @@ namespace BarcodeReader.Implementation.CognexDm375
     public class DataManProvider : IDataManProvider
     {
         private readonly IConnectionPointFactory _connectionPointFactory;
+        private bool _disposed;
 
         public DataManProvider(IConnectionPointFactory connectionPointFactory)
         {
@@ -32,6 +34,32 @@ namespace BarcodeReader.Implementation.CognexDm375
         private void Results_ComplexResultCompleted(object sender, ComplexResult e)
         {
             WeakReferenceMessenger.Default.Send(e);
+        }
+
+        public void Dispose()
+        {
+            // Dispose of unmanaged resources.
+            Dispose(true);
+            // Suppress finalization.
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                DataManSystem?.Dispose();
+            }
+
+            // TODO: free unmanaged resources (unmanaged objects).
+            // TODO: set large fields to null.
+
+            _disposed = true;
         }
     }
 }
