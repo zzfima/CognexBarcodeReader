@@ -1,0 +1,9 @@
+﻿<Application x:Class="BarcodeReader.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:BarcodeReader.Toolkit.MVVM.ViewModels;assembly=BarcodeReader.Toolkit.MVVM"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <viewModels:CompositeViewModel x:Key="CompositeViewModel"/>
+    </Application.Resources>
+</Application>

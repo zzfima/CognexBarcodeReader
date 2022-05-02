@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="BarcodeReader.Toolkit.MVVM.UserControls.IpAddressUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:validators="clr-namespace:BarcodeReader.Toolkit.MVVM.Validators"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/CustomBorder.xaml" />
+                <ResourceDictionary Source="../Styles/CustomLabel.xaml" />
+                <ResourceDictionary Source="../Styles/CustomTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="IP:" Width="50" />
+            <TextBox>
+                <TextBox.Text>
+                    <Binding Path=" IpPart1" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IpPartValidator />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox>
+                <TextBox.Text>
+                    <Binding Path=" IpPart2" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IpPartValidator />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox>
+                <TextBox.Text>
+                    <Binding Path=" IpPart3" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IpPartValidator />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox>
+                <TextBox.Text>
+                    <Binding Path=" IpPart4" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IpPartValidator />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+    </Border>
+</UserControl>

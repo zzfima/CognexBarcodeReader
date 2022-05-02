@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="BarcodeReader.Toolkit.MVVM.UserControls.MenuUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BarcodeReader.Toolkit.MVVM.UserControls"
+             mc:Ignorable="d">
+    <Menu DockPanel.Dock="Top">
+        <MenuItem Header="_File">
+            <MenuItem Header="_Help" Command="{Binding MenuHelpCommand}"/>
+            <Separator />
+            <MenuItem Header="_Exit" Command="{Binding MenuExitCommand}" />
+        </MenuItem>
+    </Menu>
+</UserControl>

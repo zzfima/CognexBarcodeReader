@@ -1,2 +1,2 @@
-# CognexBarcodeReader
-Cognex DM375 WPF application
+# BarcodeReader
+Barcode Reader Cognex DM375
