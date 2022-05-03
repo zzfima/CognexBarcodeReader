@@ -4,6 +4,7 @@ using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using BarcodeReader.Toolkit.MVVM.Properties;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
@@ -29,8 +30,7 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
 
             ImageArrived = new Image
             {
-                Source = new BitmapImage(new Uri(
-                    AppDomain.CurrentDomain.BaseDirectory + @"\Images\No_image_available.svg.png"))
+                Source = Helpers.ImageHelper.Convert(Resources.No_image_available_svg)
             };
         }
 
