@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace BarcodeReader.Toolkit.MVVM.UserControls
+namespace BarcodeReader.Toolkit.MVVM.View
 {
     /// <summary>
     /// Interaction logic for ConnectUC.xaml
     /// </summary>
-    public partial class ConnectorUserControl : UserControl
+    public partial class ConnectorView : UserControl
     {
-        public ConnectorUserControl()
+        public ConnectorView()
         {
             InitializeComponent();
         }

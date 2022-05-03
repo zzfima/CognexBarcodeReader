@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace BarcodeReader.Toolkit.MVVM.UserControls
+namespace BarcodeReader.Toolkit.MVVM.View
 {
     /// <summary>
     /// Interaction logic for WaitUC.xaml
     /// </summary>
-    public partial class WaitUserControl : UserControl
+    public partial class WaitView : UserControl
     {
-        public WaitUserControl()
+        public WaitView()
         {
             InitializeComponent();
         }

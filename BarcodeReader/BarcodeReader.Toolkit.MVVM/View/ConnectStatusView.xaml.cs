@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace BarcodeReader.Toolkit.MVVM.UserControls
+namespace BarcodeReader.Toolkit.MVVM.View
 {
     /// <summary>
     /// Interaction logic for StatusUserControl.xaml
     /// </summary>
-    public partial class ConnectStatusUserControl : UserControl
+    public partial class ConnectStatusView : UserControl
     {
-        public ConnectStatusUserControl()
+        public ConnectStatusView()
         {
             InitializeComponent();
         }

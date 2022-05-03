@@ -1,10 +1,11 @@
-﻿<UserControl x:Class="BarcodeReader.Toolkit.MVVM.UserControls.ConnectorUserControl"
+﻿<UserControl x:Class="BarcodeReader.Toolkit.MVVM.View.ConnectorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:BarcodeReader.Toolkit.MVVM.Converters"
-             xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.UserControls"
+             xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.View"
+             xmlns:view="clr-namespace:BarcodeReader.Toolkit.MVVM.View"
              mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -24,7 +25,7 @@
             <Button Content="Disconnect" Command="{Binding Path=DisconnectCommand}" 
                     VerticalAlignment="Center"
                     ToolTip="{Binding DisconnectButtonToolTip}"/>
-            <userControls:ConnectStatusUserControl DataContext="{Binding Path=ConnectStatusViewModel}"/>
+            <view:ConnectStatusView DataContext="{Binding Path=ConnectStatusViewModel}"/>
         </StackPanel>
     </Border>
 </UserControl>

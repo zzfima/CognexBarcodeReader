@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace BarcodeReader.Toolkit.MVVM.UserControls
+namespace BarcodeReader.Toolkit.MVVM.View
 {
     /// <summary>
     /// Interaction logic for IPAddressUC.xaml
     /// </summary>
-    public partial class IpAddressUserControl : UserControl
+    public partial class IpAddressView : UserControl
     {
-        public IpAddressUserControl()
+        public IpAddressView()
         {
             InitializeComponent();
         }

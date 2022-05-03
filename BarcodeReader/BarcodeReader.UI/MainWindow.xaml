@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.UserControls;assembly=BarcodeReader.Toolkit.MVVM"
+        xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.View;assembly=BarcodeReader.Toolkit.MVVM"
         DataContext="{StaticResource CompositeViewModel}"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d"
@@ -12,10 +12,10 @@
     <!--WindowStyle="None"-->
 
     <StackPanel Orientation="Vertical" Grid.Column="0">
-        <userControls:MenuUserControl Margin="1" DataContext="{Binding MenuViewModel}"/>
-        <userControls:IpAddressUserControl Margin="1" DataContext="{Binding IpAddressViewModel}" />
-        <userControls:ConnectorUserControl Margin="1" DataContext="{Binding ConnectorViewModel}" />
-        <userControls:BarcodeReaderResponseUC Margin="1" DataContext="{Binding BarcodeReaderResponseViewModel}" />
-        <userControls:WaitUserControl DataContext="{Binding WaitViewModel}" HorizontalAlignment="Right" Margin="5" />
+        <userControls:MenuView Margin="1" DataContext="{Binding MenuViewModel}"/>
+        <userControls:IpAddressView Margin="1" DataContext="{Binding IpAddressViewModel}" />
+        <userControls:ConnectorView Margin="1" DataContext="{Binding ConnectorViewModel}" />
+        <userControls:BarcodeReaderResponseView Margin="1" DataContext="{Binding BarcodeReaderResponseViewModel}" />
+        <userControls:WaitView DataContext="{Binding WaitViewModel}" HorizontalAlignment="Right" Margin="5" />
     </StackPanel>
 </Window>
