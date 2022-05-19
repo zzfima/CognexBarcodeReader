@@ -27,8 +27,7 @@ namespace BarcodeReader.UI
             var instance = MvxIoCProvider.Initialize();
             instance.ConstructAndRegisterSingleton<IMvxMessenger, MvxMessengerHub>();
             instance.ConstructAndRegisterSingleton<IAuthentication, Authentication>();
-            instance.ConstructAndRegisterSingleton<IConnectionPointFactory, EthSystemConnectionPointFactory>(
-                );
+            instance.ConstructAndRegisterSingleton<IConnectionPointFactory, EthSystemConnectionPointFactory>();
             instance.ConstructAndRegisterSingleton<IDataManProvider, DataManProvider>();
             instance.ConstructAndRegisterSingleton<IDeviceCommand, TriggerOnDeviceCommand>();
             instance.ConstructAndRegisterSingleton<IBarcodeValueReader, BarcodeValueReader>();
