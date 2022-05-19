@@ -2,18 +2,20 @@
 using BarcodeReader.Core;
 using Cognex.DataMan.SDK;
 using Cognex.DataMan.SDK.Utils;
-using Microsoft.Toolkit.Mvvm.Messaging;
+using MvvmCross.Plugin.Messenger;
 
 namespace BarcodeReader.Implementation.CognexDm375
 {
     public class DataManProvider : IDataManProvider
     {
         private readonly IConnectionPointFactory _connectionPointFactory;
+        private readonly IMvxMessenger _messenger;
         private bool _disposed;
 
-        public DataManProvider(IConnectionPointFactory connectionPointFactory)
+        public DataManProvider(IConnectionPointFactory connectionPointFactory, IMvxMessenger messenger)
         {
             _connectionPointFactory = connectionPointFactory;
+            _messenger = messenger;
             Init();
         }
 
@@ -33,7 +35,7 @@ namespace BarcodeReader.Implementation.CognexDm375
 
         private void Results_ComplexResultCompleted(object sender, ComplexResult e)
         {
-            WeakReferenceMessenger.Default.Send(e);
+            _messenger.Publish<MvxMessageComplexResult>(new MvxMessageComplexResult(this, e));
         }
 
         public void Dispose()

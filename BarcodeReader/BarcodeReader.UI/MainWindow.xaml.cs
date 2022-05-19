@@ -1,5 +1,6 @@
 ﻿using BarcodeReader.Toolkit.MVVM.ViewModels;
-using Microsoft.Toolkit.Mvvm.Messaging;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using System.Windows;
 
 namespace BarcodeReader.UI
@@ -9,12 +10,17 @@ namespace BarcodeReader.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MvxSubscriptionToken _token;
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = Mvx.IoCProvider.Resolve<CompositeViewModel>();
+            var messenger = Mvx.IoCProvider.Resolve<IMvxMessenger>();
 
-            WeakReferenceMessenger.Default.Register<WindowClose>(this,
-                (obj, res) => Close());
+
+            _token = messenger.Subscribe<WindowClose>(
+                (res) => { Close(); });
         }
     }
 }

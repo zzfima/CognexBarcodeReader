@@ -15,9 +15,9 @@ namespace BarcodeReader.UnitTest
         {
             var authentication = new Authentication("user1", "pass34");
             var ipAddress = IPAddress.Parse("192.168.0.135");
-            var connectionPointFactory = new EthSystemConnectionPointFactory(ipAddress, authentication);
-            var dataMan = new DataManProvider(connectionPointFactory);
-            IConnector connector = new Connector(dataMan);
+            var connectionPointFactory = new EthSystemConnectionPointFactory(authentication, ipAddress);
+            //var dataMan = new DataManProvider(connectionPointFactory);
+            //IConnector connector = new Connector(dataMan);
         }
 
         private void ComplexResultCompleted(ComplexResult obj)

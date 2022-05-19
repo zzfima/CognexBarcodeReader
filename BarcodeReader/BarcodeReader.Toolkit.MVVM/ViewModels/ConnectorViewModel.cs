@@ -1,10 +1,10 @@
 ﻿using BarcodeReader.Core;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+using MvvmCross.ViewModels;
 using System.Windows.Input;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public sealed class ConnectorViewModel : ObservableObject
+    public sealed class ConnectorViewModel : MvxViewModel
     {
         #region Members
 

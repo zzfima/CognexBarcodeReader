@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.View;assembly=BarcodeReader.Toolkit.MVVM"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        DataContext="{StaticResource CompositeViewModel}"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d"
         ResizeMode="NoResize"

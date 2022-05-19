@@ -1,8 +1,8 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using MvvmCross.ViewModels;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public sealed class WaitViewModel : ObservableObject
+    public sealed class WaitViewModel : MvxViewModel
     {
         #region Members
 

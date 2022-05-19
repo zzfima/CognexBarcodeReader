@@ -1,27 +1,29 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
-using System;
+﻿using MvvmCross.Commands;
+using MvvmCross.Plugin.Messenger;
 using System.Windows;
 using System.Windows.Input;
-using Microsoft.Toolkit.Mvvm.Messaging;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
     public sealed class MenuViewModel : DependencyObject
     {
-        public MenuViewModel()
+        private readonly IMvxMessenger _messenger;
+
+        public MenuViewModel(IMvxMessenger messenger)
         {
-            MenuExitCommand = new RelayCommand(ExecuteExit);
-            MenuHelpCommand = new RelayCommand(ExecuteHelp);
+            _messenger = messenger;
+            MenuExitCommand = new MvxCommand(ExecuteExit);
+            MenuHelpCommand = new MvxCommand(ExecuteHelp);
         }
 
         private void ExecuteExit()
         {
-            WeakReferenceMessenger.Default.Send(new WindowClose());
+            _messenger.Publish<WindowClose>(new WindowClose(this));
         }
 
         private void ExecuteHelp()
         {
-            WeakReferenceMessenger.Default.Send(new WindowHelp());
+            _messenger.Publish<WindowHelp>(new WindowHelp(this));
         }
 
         public ICommand MenuExitCommand { get; set; }

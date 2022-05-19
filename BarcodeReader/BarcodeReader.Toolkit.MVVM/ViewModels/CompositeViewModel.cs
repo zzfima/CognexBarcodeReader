@@ -1,15 +1,19 @@
-﻿using System.Windows;
-using BarcodeReader.Core;
+﻿using BarcodeReader.Core;
 using BarcodeReader.Toolkit.MVVM.Helpers;
 using Cognex.DataMan.SDK.Utils;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.DependencyInjection;
-using Microsoft.Toolkit.Mvvm.Messaging;
+using MvvmCross;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.ViewModels;
+using System.Windows;
+using BarcodeReader.Implementation.CognexDm375;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public sealed class CompositeViewModel : ObservableObject
+    public sealed class CompositeViewModel : MvxViewModel
     {
+        private readonly IMvxMessenger _messenger;
+        private MvxSubscriptionToken _token;
+
         #region Members
 
         private IpAddressViewModel _ipAddressViewModel;
@@ -22,21 +26,20 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
 
         #region Constructor
 
-        public CompositeViewModel()
+        public CompositeViewModel(IMvxMessenger messenger)
         {
+            _messenger = messenger;
             InstantiateViewModel();
             InstantiateRegisterMessenger();
         }
 
         private void InstantiateRegisterMessenger()
         {
-            WeakReferenceMessenger.Default.Register<ComplexResult>(this,
-                (obj, complexResult) =>
-                {
-                    ComplexResultCompleted(complexResult);
-                });
-            WeakReferenceMessenger.Default.Register<WindowHelp>(this,
-                (obj, res) =>
+            _token = _messenger.Subscribe<MvxMessageComplexResult>(
+                res => ComplexResultCompleted(res.ComplexResult));
+
+            _token = _messenger.Subscribe<WindowHelp>(
+                (res) =>
                 {
                     Window win2 = new Window();
                     win2.ShowDialog();
@@ -45,18 +48,18 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
 
         private void InstantiateViewModel()
         {
-            _waitViewModel = Ioc.Default.GetRequiredService<WaitViewModel>();
-            _ipAddressViewModel = Ioc.Default.GetRequiredService<IpAddressViewModel>();
-            _connectorViewModel = Ioc.Default.GetRequiredService<ConnectorViewModel>();
-            _barcodeReaderResponseViewModel = Ioc.Default.GetRequiredService<BarcodeReaderResponseViewModel>();
-            _menuViewModel = Ioc.Default.GetRequiredService<MenuViewModel>();
+            _waitViewModel = Mvx.IoCProvider.Resolve<WaitViewModel>();
+            _ipAddressViewModel = Mvx.IoCProvider.Resolve<IpAddressViewModel>();
+            _connectorViewModel = Mvx.IoCProvider.Resolve<ConnectorViewModel>();
+            _barcodeReaderResponseViewModel = Mvx.IoCProvider.Resolve<BarcodeReaderResponseViewModel>();
+            _menuViewModel = Mvx.IoCProvider.Resolve<MenuViewModel>();
         }
 
         #endregion
 
         public void ComplexResultCompleted(ComplexResult complexResult)
         {
-            var barcodeValueReader = Ioc.Default.GetRequiredService<IBarcodeValueReader>();
+            var barcodeValueReader = Mvx.IoCProvider.Resolve<IBarcodeValueReader>();
             barcodeValueReader.ComplexResultRead(complexResult);
 
             BarcodeReaderResponseViewModel.DataStringArrived = barcodeValueReader.ReadResult;

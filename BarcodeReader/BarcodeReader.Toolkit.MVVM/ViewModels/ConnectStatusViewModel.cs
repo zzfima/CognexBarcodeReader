@@ -1,8 +1,8 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using MvvmCross.ViewModels;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public sealed class ConnectStatusViewModel : ObservableObject
+    public sealed class ConnectStatusViewModel : MvxViewModel
     {
         #region Members
 

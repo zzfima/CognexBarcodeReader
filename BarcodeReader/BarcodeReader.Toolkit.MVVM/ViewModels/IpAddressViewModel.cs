@@ -1,8 +1,8 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using MvvmCross.ViewModels;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public sealed class IpAddressViewModel : ObservableObject
+    public sealed class IpAddressViewModel : MvxViewModel
     {
         #region Members
 

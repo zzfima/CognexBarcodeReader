@@ -1,9 +1,9 @@
-﻿using System;
-
-namespace BarcodeReader.Toolkit.MVVM.ViewModels
+﻿namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public class WindowClose
+    public sealed class WindowClose : MvvmCross.Plugin.Messenger.MvxMessage
     {
-
+        public WindowClose(object sender) : base(sender)
+        {
+        }
     }
 }

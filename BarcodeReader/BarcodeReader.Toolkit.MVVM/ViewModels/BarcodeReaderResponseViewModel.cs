@@ -1,14 +1,12 @@
 ﻿using BarcodeReader.Core;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
+using BarcodeReader.Toolkit.MVVM.Properties;
+using MvvmCross.ViewModels;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using BarcodeReader.Toolkit.MVVM.Properties;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
-    public sealed class BarcodeReaderResponseViewModel : ObservableObject
+    public sealed class BarcodeReaderResponseViewModel : MvxViewModel
     {
         private readonly IDeviceCommand _deviceCommand;
 
