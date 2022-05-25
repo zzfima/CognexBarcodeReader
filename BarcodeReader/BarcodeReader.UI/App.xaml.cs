@@ -34,13 +34,13 @@ namespace BarcodeReader.UI
             instance.ConstructAndRegisterSingleton<IConnector, Connector>();
 
             //ViewModels
-            instance.ConstructAndRegisterSingleton<WaitViewModel, WaitViewModel>();
-            instance.ConstructAndRegisterSingleton<IpAddressViewModel, IpAddressViewModel>();
-            instance.ConstructAndRegisterSingleton<ConnectStatusViewModel, ConnectStatusViewModel>();
-            instance.ConstructAndRegisterSingleton<ConnectorViewModel, ConnectorViewModel>();
-            instance.ConstructAndRegisterSingleton<BarcodeReaderResponseViewModel, BarcodeReaderResponseViewModel>();
-            instance.ConstructAndRegisterSingleton<MenuViewModel, MenuViewModel>();
-            instance.ConstructAndRegisterSingleton<CompositeViewModel, CompositeViewModel>();
+            instance.ConstructAndRegisterSingleton(typeof(WaitViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(IpAddressViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(ConnectStatusViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(ConnectorViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(BarcodeReaderResponseViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(MenuViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(CompositeViewModel));
 
 
             //Ioc.Default.ConfigureServices(

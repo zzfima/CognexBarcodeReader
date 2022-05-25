@@ -1,10 +1,10 @@
 ﻿<Window x:Class="BarcodeReader.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.View;assembly=BarcodeReader.Toolkit.MVVM"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d"
         ResizeMode="NoResize"
@@ -13,14 +13,12 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="LightBlue" SecondaryColor="LightGreen" />
-                <ResourceDictionary
-                    Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+              
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <StackPanel Orientation="Vertical" Grid.Column="0">
-        <userControls:MenuView Margin="1" DataContext="{Binding MenuViewModel}"/>
+        <userControls:MenuView Margin="1" DataContext="{Binding MenuViewModel}" />
         <userControls:IpAddressView Margin="1" DataContext="{Binding IpAddressViewModel}" />
         <userControls:ConnectorView Margin="1" DataContext="{Binding ConnectorViewModel}" />
         <userControls:BarcodeReaderResponseView Margin="1" DataContext="{Binding BarcodeReaderResponseViewModel}" />

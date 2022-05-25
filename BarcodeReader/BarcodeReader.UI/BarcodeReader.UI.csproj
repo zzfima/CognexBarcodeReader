@@ -21,14 +21,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
     <PackageReference Include="MvvmCross" Version="8.0.2" />
 
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cognex.DataMan.SDK.PC">
-      <HintPath>..\..\ThirdParty\Cognex.DataMan.SDK.PC.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />

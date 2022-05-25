@@ -11,6 +11,7 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
         private readonly IConnector _connector;
         private readonly WaitViewModel _waitViewModel;
         private ConnectStatusViewModel _connectStatusViewModel;
+        private double _rotateRelativeValue;
 
         #endregion
 
@@ -25,6 +26,7 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
             _connectStatusViewModel = connectStatusViewModel;
             _connectStatusViewModel.IsConnected = false;
             _connector = connector;
+            RotateRelativeValue = 3.4;
         }
 
         #endregion
@@ -36,7 +38,11 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
             get => _connectStatusViewModel;
             set => SetProperty(ref _connectStatusViewModel, value);
         }
-
+        public double RotateRelativeValue
+        {
+            get => _rotateRelativeValue;
+            set => SetProperty(ref _rotateRelativeValue, value);
+        }
         public string ConnectButtonToolTip => "Connect to device";
 
         public string DisconnectButtonToolTip => "Disconnect from device";

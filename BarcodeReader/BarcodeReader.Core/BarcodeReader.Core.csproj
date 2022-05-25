@@ -13,13 +13,9 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cognex.DataMan.SDK.PC, Version=5.6.3.126, Culture=neutral, PublicKeyToken=9f98866f2a3a2e78, processorArchitecture=MSIL">
-      <HintPath>..\..\ThirdParty\Cognex.DataMan.SDK.PC.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Cognex.DataMan.SDK.Utils.PC">
-      <HintPath>..\..\ThirdParty\Cognex.DataMan.SDK.Utils.PC.dll</HintPath>
-    </Reference>
+    <PackageReference Include="CognexDataManForDM375" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />

@@ -6,6 +6,7 @@
              xmlns:converters="clr-namespace:BarcodeReader.Toolkit.MVVM.Converters"
              xmlns:userControls="clr-namespace:BarcodeReader.Toolkit.MVVM.View"
              xmlns:view="clr-namespace:BarcodeReader.Toolkit.MVVM.View"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -19,13 +20,13 @@
     </UserControl.Resources>
     <Border>
         <StackPanel Orientation="Horizontal">
-            <Button Content="Connect" Command="{Binding Path=ConnectCommand}" 
+            <Button Content="Connect" Command="{Binding Path=ConnectCommand}"
                     VerticalAlignment="Center"
-                    ToolTip="{Binding ConnectButtonToolTip}"/>
-            <Button Content="Disconnect" Command="{Binding Path=DisconnectCommand}" 
+                    ToolTip="{Binding ConnectButtonToolTip}" />
+            <Button Content="Disconnect" Command="{Binding Path=DisconnectCommand}"
                     VerticalAlignment="Center"
-                    ToolTip="{Binding DisconnectButtonToolTip}"/>
-            <view:ConnectStatusView DataContext="{Binding Path=ConnectStatusViewModel}"/>
+                    ToolTip="{Binding DisconnectButtonToolTip}" />
+            <view:ConnectStatusView DataContext="{Binding Path=ConnectStatusViewModel}" />
         </StackPanel>
     </Border>
 </UserControl>
