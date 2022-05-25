@@ -8,9 +8,9 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <converters:IsConnectedStringConverter x:Key="IsConnectedStringConverter" />
-            <!--<ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/CustomLabel.xaml" />
-            </ResourceDictionary.MergedDictionaries>-->
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <Border>

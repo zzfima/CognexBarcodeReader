@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:validators="clr-namespace:BarcodeReader.Toolkit.MVVM.Validators"
              mc:Ignorable="d">
-    <!--<UserControl.Resources>
+    <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Styles/CustomBorder.xaml" />
@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="../Styles/CustomTextBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </UserControl.Resources>-->
+    </UserControl.Resources>
     <Border>
         <StackPanel Orientation="Horizontal">
             <Label Content="IP:" Width="50" />
