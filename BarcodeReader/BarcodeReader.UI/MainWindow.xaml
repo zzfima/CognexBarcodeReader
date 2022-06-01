@@ -1,6 +1,5 @@
 ﻿<Window x:Class="BarcodeReader.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,7 +12,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-              
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -22,6 +21,7 @@
         <userControls:IpAddressView Margin="1" DataContext="{Binding IpAddressViewModel}" />
         <userControls:ConnectorView Margin="1" DataContext="{Binding ConnectorViewModel}" />
         <userControls:BarcodeReaderResponseView Margin="1" DataContext="{Binding BarcodeReaderResponseViewModel}" />
+        <userControls:ConfigurationView Margin="1" DataContext="{Binding ConfigurationViewModel}" />
         <userControls:WaitView DataContext="{Binding WaitViewModel}" HorizontalAlignment="Right" Margin="5" />
     </StackPanel>
 </Window>

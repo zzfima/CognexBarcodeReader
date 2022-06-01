@@ -23,6 +23,7 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
         private BarcodeReaderResponseViewModel _barcodeReaderResponseViewModel;
         private WaitViewModel _waitViewModel;
         private MenuViewModel _menuViewModel;
+        private ConfigurationViewModel _configurationViewModel;
 
         #endregion
 
@@ -55,6 +56,7 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
             _connectorViewModel = Mvx.IoCProvider.Resolve<ConnectorViewModel>();
             _barcodeReaderResponseViewModel = Mvx.IoCProvider.Resolve<BarcodeReaderResponseViewModel>();
             _menuViewModel = Mvx.IoCProvider.Resolve<MenuViewModel>();
+            _configurationViewModel = Mvx.IoCProvider.Resolve<ConfigurationViewModel>();
         }
 
         #endregion
@@ -102,6 +104,12 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
         {
             get => _waitViewModel;
             set => SetProperty(ref _waitViewModel, value);
+        }
+
+        public ConfigurationViewModel ConfigurationViewModel
+        {
+            get => _configurationViewModel;
+            set => SetProperty(ref _configurationViewModel, value);
         }
 
         #endregion

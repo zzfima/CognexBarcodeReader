@@ -40,6 +40,7 @@ namespace BarcodeReader.UI
             instance.ConstructAndRegisterSingleton(typeof(ConnectorViewModel));
             instance.ConstructAndRegisterSingleton(typeof(BarcodeReaderResponseViewModel));
             instance.ConstructAndRegisterSingleton(typeof(MenuViewModel));
+            instance.ConstructAndRegisterSingleton(typeof(ConfigurationViewModel));
             instance.ConstructAndRegisterSingleton(typeof(CompositeViewModel));
 
 
