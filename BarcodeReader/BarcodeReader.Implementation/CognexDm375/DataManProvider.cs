@@ -24,14 +24,7 @@ namespace BarcodeReader.Implementation.CognexDm375
             DataManSystem = new DataManSystem(_connectionPointFactory.Create());
             DataManSystem.DefaultTimeout = 5000;
             ResultTypes requested_result_types =
-                ResultTypes.ReadXml |
-                ResultTypes.ReadString |
-                ResultTypes.ReadXmlExtended |
-                ResultTypes.Image |
-                ResultTypes.ImageGraphics |
-                ResultTypes.InputEvent |
-                ResultTypes.XmlStatistics;
-            ;
+                ResultTypes.ReadXml | ResultTypes.Image | ResultTypes.ImageGraphics;
             var results = new ResultCollector(DataManSystem, requested_result_types);
             results.ComplexResultCompleted += Results_ComplexResultCompleted;
             DataManSystem.SetKeepAliveOptions(true, 3000, 1000);
