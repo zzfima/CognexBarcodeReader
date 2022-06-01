@@ -20,7 +20,7 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
             _ipPart1 = 192;
             _ipPart2 = 168;
             _ipPart3 = 0;
-            _ipPart4 = 135;
+            _ipPart4 = 6;
         }
 
         #endregion

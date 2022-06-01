@@ -11,7 +11,7 @@ namespace BarcodeReader.Implementation.CognexDm375.ConnectionPointFactories
 
         public EthSystemConnectionPointFactory(IAuthentication authentication, IPAddress ipAddress = null)
         {
-            _ipAddress = ipAddress ?? new IPAddress(new byte[] { 192, 168, 0, 135 });
+            _ipAddress = ipAddress ?? new IPAddress(new byte[] { 192, 168, 0, 6 });
             _authentication = authentication;
         }
 

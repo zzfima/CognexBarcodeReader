@@ -6,13 +6,15 @@ using MvvmCross.Plugin.Messenger;
 using MvvmCross.ViewModels;
 using System.Windows;
 using BarcodeReader.Implementation.CognexDm375;
+using System.Threading;
 
 namespace BarcodeReader.Toolkit.MVVM.ViewModels
 {
     public sealed class CompositeViewModel : MvxViewModel
     {
         private readonly IMvxMessenger _messenger;
-        private MvxSubscriptionToken _token;
+        private MvxSubscriptionToken _tokenMvxMessageComplexResult;
+        private MvxSubscriptionToken _tokenWindowHelp;
 
         #region Members
 
@@ -35,10 +37,10 @@ namespace BarcodeReader.Toolkit.MVVM.ViewModels
 
         private void InstantiateRegisterMessenger()
         {
-            _token = _messenger.Subscribe<MvxMessageComplexResult>(
+            _tokenMvxMessageComplexResult = _messenger.Subscribe<MvxMessageComplexResult>(
                 res => ComplexResultCompleted(res.ComplexResult));
 
-            _token = _messenger.Subscribe<WindowHelp>(
+            _tokenWindowHelp = _messenger.Subscribe<WindowHelp>(
                 (res) =>
                 {
                     Window win2 = new Window();
